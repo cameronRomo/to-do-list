@@ -7,14 +7,19 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "scaffolds", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <h1>To Do</h1>
+    <p style="color: green"><%= notice %></p>
+    <p id="alert"><%= alert %></p>
     <% if current_user %>
       Welcome <%= current_user.username %>, keep it up!<br>
       <%= link_to "Log Out", :logout %>
     <% else %>
-      <%= link_to "Log In", :login %> or
-      <%= link_to "Sign Up", :signup %>
+      <div>
+        <%= link_to "Log In", :login %> or
+        <%= link_to "Sign Up", :signup %>
+      </div>
     <% end %>
   </head>
 
